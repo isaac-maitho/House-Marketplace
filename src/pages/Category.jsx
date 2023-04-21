@@ -16,11 +16,11 @@ function Category() {
         const fetchListings = async () =>{
             try {
                 //Get reference
-                const listingRef = collection(db, 'listings')
+                const listingsRef = collection(db, 'listings')
 
                 //create query
                 const q = query(
-                    listingRef, 
+                    listingsRef, 
                     where('type', '==', params.categoryName), 
                     orderBy('timestamp', 'desc'), 
                     limit(10))
