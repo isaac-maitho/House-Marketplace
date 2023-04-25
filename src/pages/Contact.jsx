@@ -18,7 +18,7 @@ function Contact() {
             const docSnap = await getDoc(docRef)
 
             if(docSnap.exists()){
-                setLandlord(docSnap.data)
+                setLandlord(docSnap.data())
             }else{
                 toast.error('Could not get landlord data')
             }
@@ -46,7 +46,7 @@ function Contact() {
                         <textarea 
                            name="message" 
                            id="message" 
-                           className="textArea" 
+                           className="textarea" 
                            value={message} 
                            onChange={onChange}>
                         </textarea>
