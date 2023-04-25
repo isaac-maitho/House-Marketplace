@@ -50,15 +50,9 @@ function Listing() {
           pagination = {{ clickable: true }}>
         {listing.imgUrls.map((url,index) => (
             <SwiperSlide key={index}>
-                <div 
-                  style={{
-                    background: `url(${listing.imgUrls[index]}) 
-                    center no-repeat`,
-                    backgroundSize: 'cover',
-                    }} 
-                  className="swiperSlideDiv"
-                  >
-                </div>
+              <div className="swiperSlideDiv">
+               <img src={listing.imgUrls[index]} alt="Place for rent/sale" />
+              </div>
             </SwiperSlide>
         ))}
       </Swiper>
@@ -114,7 +108,7 @@ function Listing() {
             {auth.currentUser?.uid !== listing.userRef && (
                 <Link 
                   to={`/contact/${listing.userRef}? 
-                  listingName =${listing.name}&listingLocation =${listing.location}`} 
+                  listingName =${listing.name}`} 
                   className="primaryButton">
                     Contact Owner
                 </Link>
