@@ -11,6 +11,7 @@ import Spinner from '../components/Spinner'
 
 function CreateListing() {
 
+  // eslint-disable-next-line
   const [ geolocationEnabled, setGeolocationEnabled ] = useState(false)
   const [ loading, setLoading ] = useState(false)
   const [ formData, setFormData ] = useState({
@@ -97,6 +98,8 @@ function CreateListing() {
             case 'running':
           console.log('Upload is running');
             break;
+          default:
+              break;
            }
          }, 
          (error) => {
